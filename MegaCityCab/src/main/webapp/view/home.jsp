@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<%
+    // Retrieve user session
+    HttpSession userSession = request.getSession(false);
+    String username = (userSession != null) ? (String) userSession.getAttribute("username") : null;
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +14,9 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/homestyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    
 </head>
 <body>
     <!-- Navbar -->
@@ -24,10 +31,15 @@
                     <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.jsp">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.jsp">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cars">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.jsp">Cars</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactUs.jsp">Contact</a></li>
+                     <% if (username != null) { %>
+                        <li class="nav-item"><a class="nav-link fw-bold" href="profile.jsp">Welcome, <%= username %></a></li>
+                        <li class="nav-item"><a class="nav-link text-danger" href="logout.jsp">Logout</a></li>
+                    <% } else { %>
+                        <li class="nav-item"><a class="nav-link text-primary" href="${pageContext.request.contextPath}/view/Login.jsp">Login</a></li>
+                    <% } %>
                 </ul>
             </div>
         </div>
