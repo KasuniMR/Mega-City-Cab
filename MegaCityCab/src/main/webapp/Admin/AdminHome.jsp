@@ -108,6 +108,7 @@
             <li><a href="manageBooking.jsp"><i class="fas fa-book"></i> <span>Manage Booking</span></a></li>
             <li><a href="manageCars.jsp"><i class="fas fa-car"></i> <span>Manage Car</span></a></li>
             <li><a href="manageDrivers.jsp"><i class="fas fa-user-tie"></i> <span>Manage Drivers</span></a></li>
+            <li><a href="message.jsp"><i class="fas fa-comments"></i> <span>Message Box</span></a></li>
             <li><a href="logout.jsp"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
         </ul>
     </div>

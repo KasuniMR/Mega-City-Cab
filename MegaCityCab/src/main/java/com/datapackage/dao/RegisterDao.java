@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.*;
 
 import com.datapackage.model.Register;
 
@@ -65,4 +66,45 @@ public class RegisterDao {
         }
         return false;
     }
+    
+    public Register getUserByUsername(String uname) {
+        String query = "SELECT * FROM login WHERE UserName = ?";
+        
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            
+            ps.setString(1, uname);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return new Register(rs.getString("FullName"), rs.getString("Address"),
+                                    rs.getString("Contact"), rs.getString("UserName"),
+                                    rs.getString("Password"), rs.getString("profile_pic"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public boolean updateUser(Register user) {
+        String query = "UPDATE login SET FullName=?, Address=?, Contact=?, Password=?, profile_pic=? WHERE UserName=?";
+        
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getAddress());
+            ps.setString(3, user.getContact());
+            ps.setString(4, user.getPassword());
+            ps.setString(5, user.getProfileImage());
+            ps.setString(6, user.getUname());
+
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
 }
