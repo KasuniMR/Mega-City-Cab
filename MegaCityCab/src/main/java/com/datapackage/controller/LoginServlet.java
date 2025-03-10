@@ -34,13 +34,14 @@ public class LoginServlet extends HttpServlet {
 
             // Handle "Remember Me" using cookies
             if (rememberMe != null) {
-                Cookie userCookie = new Cookie("username", uname);
+                Cookie userCookie = new Cookie("savedUsername", uname);
                 userCookie.setMaxAge(7 * 24 * 60 * 60); // 7 days
-                userCookie.setHttpOnly(true); // Security: Prevent JS access
+                userCookie.setPath("/"); // Ensure it works across pages
                 response.addCookie(userCookie);
             } else {
-                Cookie userCookie = new Cookie("username", "");
+                Cookie userCookie = new Cookie("savedUsername", "");
                 userCookie.setMaxAge(0); // Delete the cookie
+                userCookie.setPath("/");
                 response.addCookie(userCookie);
             }
 

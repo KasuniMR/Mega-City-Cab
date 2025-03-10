@@ -527,7 +527,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h5 class="fw-bold">CAR<span class="text-success">BOOK</span></h5>
+                <h5 class="fw-bold">MEGA CITY<span class="text-success">CAB</span></h5>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 <div class="d-flex">
                     <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
@@ -563,7 +563,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <p>Copyright &copy;2025 All rights reserved | This template is made with <i class="fas fa-heart text-danger"></i> by Colorlib</p>
+            <p>Copyright &copy;2025 All rights reserved | This template is made with <i class="fas fa-heart text-danger"></i> by Kasuni</p>
         </div>
     </div>
 </footer>

@@ -97,7 +97,7 @@
                                 <input type="password" id="password" name="password" required>
                                 <label for="password">Password</label>
                             </div>
-                            <button type="submit" class="btn waves-effect waves-light">Register</button>
+                            <button type="submit" id="register" class="btn waves-effect waves-light">Register</button>
                             <button type="reset" class="btn waves-effect waves-light">Clear</button>
                         </form>
                         <br>

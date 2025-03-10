@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="jakarta.servlet.http.Cookie" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,11 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+.signup-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
 }
 .card {
     background: #1e1e1e;
@@ -62,56 +67,51 @@ body {
 </head>
 
 <body class="container">
-
-<%
-    String savedUsername = "";
-    Cookie[] cookies = request.getCookies();
-    if (cookies != null) {
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("userName")) {
-                savedUsername = cookie.getValue();
-            }
-        }
-    }
-%>
-
-<div class="container">
-    <div class="row signup-container">
-
-        <div class="col s12 m6 offset-m1">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title center-align">Login</span>
-                    <form action="<%= request.getContextPath() %>/loginServlet" method="post">
-                        <div class="input-field">
-                            <input type="email" id="uname" name="uname" value="<%= savedUsername %>" required />
-                            <label for="uname">Username</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="password" id="password" name="password" required />
-                            <label for="password">Password</label>
-                        </div>
-                        <p>
-                            <label>
-                                <input type="checkbox" name="rememberMe" />
-                                <span>Remember Me</span>
-                            </label>
-                        </p>
-                        <div align="center">
-                            <button type="submit" id="submit" class="btn waves-effect waves-light">Login</button>
-                            <button type="reset" class="btn waves-effect waves-light">Clear</button>
-                        </div>
-                    </form>
-                    <br>
-                    <p class="center-align">Not registered yet?</p>
-                    <a href="Register.jsp" class="link-style">Create Account</a>
+    <div class="container">
+        <div class="row signup-container">
+            <div class="col s12 m6 offset-m1">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title center-align">Login</span>
+                        <%
+                            String savedUsername = "";
+                            Cookie[] cookies = request.getCookies();
+                            if (cookies != null) {
+                                for (Cookie cookie : cookies) {
+                                    if ("username".equals(cookie.getName())) {
+                                        savedUsername = cookie.getValue();
+                                    }
+                                }
+                            }
+                        %>
+                        <form action="<%=request.getContextPath()%>/loginServlet" method="post">
+                            <div class="input-field">
+                                <input type="email" id="uname" name="uname" required value="<%= savedUsername %>" />
+                                <label for="uname">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="password" name="password" required />
+                                <label for="password">Password</label>
+                            </div>
+                           
+                                <label>
+                                    <input type="checkbox" name="rememberMe" />
+                                    <span>Remember Me</span>
+                                </label>
+                            
+                            <div align="center">
+                                <button type="submit" id="submit" class="btn waves-effect waves-light">Login</button>
+                                <button type="reset" class="btn waves-effect waves-light">Clear</button>
+                            </div>
+                        </form>
+                        <br>
+                        <p class="center-align">Not registered yet?</p>
+                        <a href="Register.jsp" class="link-style">Create Account</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Materialize JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

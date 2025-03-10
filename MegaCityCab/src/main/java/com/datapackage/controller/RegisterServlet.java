@@ -37,13 +37,13 @@ public class RegisterServlet extends HttpServlet {
         Register user = new Register(name,address,contact,uname,password);
 
         if (registerDao.userExists(uname)) {
-            response.sendRedirect("Views/Register.jsp?error=userExists");
+            response.sendRedirect("view/Register.jsp?error=userExists");
         } else {
             boolean isRegistered = registerDao.registerUser(user);
             if (isRegistered) {
                 response.sendRedirect("view/Login.jsp");
             } else {
-                response.sendRedirect("view/Register.jsp?error=registrationFailed");
+                response.sendRedirect("view/Register.jsp?error=userExists");
             }
         }
     }
