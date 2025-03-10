@@ -1,0 +1,111 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #3577dc;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 30px;
+    background: #125cc8;
+    color: #fff;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.sub-text {
+    font-size: 18px;
+    color: #125cc8;
+}
+
+/* Car Grid */
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Car Card */
+.car-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Car Image */
+.car-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Car Info */
+.car-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.car-info h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Features */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.features p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Price */
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin: 15px 0;
+}
+
+/* Rent Now Button */
+.rent-btn {
+    background-color: #0e53f5;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.rent-btn:hover {
+    background-color: #e64522;
+}
