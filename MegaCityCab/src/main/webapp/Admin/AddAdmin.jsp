@@ -28,7 +28,7 @@ h2, h3 { text-align: center; font-weight: bold; color: #ffcc00; }
 </head>
 <body>
     <div class="container">
-        <a href="${pageContext.request.contextPath}/Admin/AdminHome.jsp" class="back-btn">⬅ Back to Admin Home</a>
+        <a href="${pageContext.request.contextPath}/Admin/AdminHome.jsp" class="back-btn">⬅ Back to Dashboard</a>
         <h2>👤 Manage Admins</h2>
 
         <div class="form-container">

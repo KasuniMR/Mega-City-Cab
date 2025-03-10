@@ -52,6 +52,83 @@
             color: #e0e0e0;
             border: none;
         }
+        /* About Us Section */
+.about-us-section {
+    padding: 80px 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0;
+}
+
+.about-us-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-us-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-us-content {
+    background: linear-gradient(to right, #2e7d32, #1b5e20);
+    padding: 40px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-us-content:hover {
+    transform: translateY(-5px);
+}
+
+.section-subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-us-btn {
+    background: #4caf50;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s ease-in-out;
+}
+
+.about-us-btn:hover {
+    background: #388e3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us-content {
+        padding: 20px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .section-text {
+        font-size: 14px;
+    }
+}
+        
         .footer {
             background: #1e1e1e;
             padding: 30px 0;
@@ -185,6 +262,7 @@
                 grid-template-columns: 1fr;
             }
         }
+        
     </style>
 </head>
 <body>
@@ -218,37 +296,105 @@
         </div>
     </section>
     
-    <!-- Services Section -->
-    <section class="container py-5">
-        <h2 class="text-center fw-bold">What We Offer</h2>
-        <p id="service" class="text-center ">Explore our best-in-class car rental services tailored to your needs.</p>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <i class="fas fa-car fa-3x mb-3"></i>
-                    <h5 class="fw-bold">Car Rental</h5>
-                    <p>Choose from a wide range of well-maintained vehicles for your trips.</p>
-                    <a href="services.jsp" class="btn btn-success">Read More</a>
+    <!-- About Us Section -->
+<div class="about-us-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Image -->
+            <div class="col-lg-6 about-us-image">
+                <img src="<%=request.getContextPath() + "/images/home.jpg"%>"class="img-fluid rounded" alt="About Us">
+            </div>
+            <!-- Right Content -->
+            <div class="col-lg-6 about-us-content">
+                <h6 class="section-subtitle">About Us</h6>
+                <h1 class="section-title">Welcome to Carbook</h1>
+                <p class="section-text">
+                    A small river named Duden flows by their place and supplies it with the necessary regelialia. 
+                    It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                </p>
+                <p class="section-text">
+                    On her way she met a copy. The copy warned the Little Blind Text, that where it came from 
+                    it would have been rewritten a thousand times and everything that was left from its origin 
+                    would be the word "and" and the Little Blind Text should turn around and return to its own, 
+                    safe country.
+                </p>
+                <a href="#" class="btn btn-primary about-us-btn">Search Vehicle</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    
+<!-- Services Start -->
+<div class="container-xxl py-5" style="background-color: #121212;">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-light text-uppercase">Our Services</h6>
+            <h1 class="mb-5 text-light">Explore Our <span class="text-primary text-uppercase">Premium Services</span></h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-dark text-light p-4 text-center rounded">
+                    <div class="icon mb-3">
+                        <i class="fa fa-car text-primary fa-3x"></i>
+                    </div>
+                    <h5>Wide Range of Vehicles</h5>
+                    <p>Choose from a variety of cars, from economy to luxury, for your every need.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <i class="fas fa-user-tie fa-3x mb-3"></i>
-                    <h5 class="fw-bold">Chauffeur Services</h5>
-                    <p>Professional drivers to ensure a safe and comfortable ride.</p>
-                    <a href="services.jsp" class="btn btn-success">Read More</a>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-dark text-light p-4 text-center rounded">
+                    <div class="icon mb-3">
+                        <i class="fa fa-map-marked-alt text-primary fa-3x"></i>
+                    </div>
+                    <h5>Easy Online Booking</h5>
+                    <p>Book your car in minutes with our seamless online reservation system.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <i class="fas fa-tools fa-3x mb-3"></i>
-                    <h5 class="fw-bold">Car Maintenance</h5>
-                    <p>Reliable car servicing to keep your vehicle in top condition.</p>
-                    <a href="services.jsp" class="btn btn-success">Read More</a>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-dark text-light p-4 text-center rounded">
+                    <div class="icon mb-3">
+                        <i class="fa fa-shield-alt text-primary fa-3x"></i>
+                    </div>
+                    <h5>Comprehensive Insurance</h5>
+                    <p>Drive with peace of mind knowing you're fully covered on the road.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item bg-dark text-light p-4 text-center rounded">
+                    <div class="icon mb-3">
+                        <i class="fa fa-headset text-primary fa-3x"></i>
+                    </div>
+                    <h5>24/7 Customer Support</h5>
+                    <p>Our support team is available around the clock to assist you.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                <div class="service-item bg-dark text-light p-4 text-center rounded">
+                    <div class="icon mb-3">
+                        <i class="fa fa-gas-pump text-primary fa-3x"></i>
+                    </div>
+                    <h5>Fuel-Efficient Options</h5>
+                    <p>Save money with our fuel-efficient and eco-friendly car options.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                <div class="service-item bg-dark text-light p-4 text-center rounded">
+                    <div class="icon mb-3">
+                        <i class="fa fa-road text-primary fa-3x"></i>
+                    </div>
+                    <h5>Flexible Rental Plans</h5>
+                    <p>Enjoy daily, weekly, or monthly rental plans that suit your schedule.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+<!-- Services End --> 
+
+<!-- Services End -->
+
     
     <!-- Blog Posts Section -->
 <main class="container my-5">

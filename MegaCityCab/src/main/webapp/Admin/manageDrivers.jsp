@@ -70,7 +70,7 @@ body {
 	<div class="container">
 		<!-- Back to Admin Home Button -->
 		<a href="${pageContext.request.contextPath}/Admin/AdminHome.jsp"
-			class="back-btn">⬅ Back to Admin Home</a>
+			class="back-btn">⬅ Back to Dashboard</a>
 
 		<h2 class="text-center">🚌 Manage Drivers</h2>
 

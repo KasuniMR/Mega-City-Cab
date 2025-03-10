@@ -6,33 +6,47 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Cookie;
 
 import java.io.IOException;
 
 import com.datapackage.dao.RegisterDao;
 
-
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;  
-	private RegisterDao registerDao;
+    private static final long serialVersionUID = 1L;  
+    private RegisterDao registerDao;
 
     @Override
     public void init() throws ServletException {
         registerDao = new RegisterDao();
     }
     
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uname = request.getParameter("uname");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String uname = request.getParameter("uname");
         String password = request.getParameter("password");
+        String rememberMe = request.getParameter("rememberMe");
 
         if (registerDao.validateUser(uname, password)) {
+            // Create session
             HttpSession session = request.getSession();
             session.setAttribute("uname", uname);
+
+            // Handle "Remember Me" using cookies
+            if (rememberMe != null) {
+                Cookie userCookie = new Cookie("username", uname);
+                userCookie.setMaxAge(7 * 24 * 60 * 60); // 7 days
+                userCookie.setHttpOnly(true); // Security: Prevent JS access
+                response.addCookie(userCookie);
+            } else {
+                Cookie userCookie = new Cookie("username", "");
+                userCookie.setMaxAge(0); // Delete the cookie
+                response.addCookie(userCookie);
+            }
+
             response.sendRedirect("view/home.jsp");
         } else {
             response.sendRedirect("view/Login.jsp?error=invalid");
         }
-	}
-
+    }
 }

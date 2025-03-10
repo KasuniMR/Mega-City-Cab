@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page session="true" %>
+<%
+    String adminUsername = (String) session.getAttribute("username");
+    if (adminUsername == null) {
+        response.sendRedirect("AdminLogin.jsp"); // Redirect if not logged in
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

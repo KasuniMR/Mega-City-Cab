@@ -28,8 +28,10 @@ public class AdminLoginServlet extends HttpServlet {
             session.setAttribute("username", username);
             response.sendRedirect("Admin/AdminHome.jsp");
         } else {
+        	request.setAttribute("errorMessage", "Invalid credentials!");
             request.getRequestDispatcher("Admin/AdminLogin.jsp").forward(request, response);
         }
+
     }
 	
 
