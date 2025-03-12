@@ -37,7 +37,7 @@ body {
 	color: #4caf50 !important;
 }
 .hero {
-	background: linear-gradient(to right, #2e7d32, #1b5e20);
+	background: url('../images/front2.jpg') no-repeat center center/cover;
 	padding: 50px 0;
 	text-align: center;
 	color: white;

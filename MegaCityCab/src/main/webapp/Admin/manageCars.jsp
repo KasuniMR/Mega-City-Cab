@@ -114,7 +114,7 @@ h2, h3 {
 		<!-- Back to Admin Home Button -->
 		<a href="${pageContext.request.contextPath}/Admin/AdminHome.jsp" class="back-btn">⬅ Back to Dashboard</a>
 
-		<h2>🚗 Manage Cars</h2>
+		<h2>🚗 Manage Car</h2>
 
 		<!-- Add Car Form -->
 		<div class="form-container">

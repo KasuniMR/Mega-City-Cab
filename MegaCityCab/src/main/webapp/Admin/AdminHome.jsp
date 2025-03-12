@@ -132,8 +132,8 @@
         <div class="row mt-4">
             <div class="col-md-3">
                 <div class="card p-3 text-center">
-                    <h3><i class="fas fa-dollar-sign"></i> Total Sales</h3>
-                    <p class="fs-4">$5,000</p>
+                    <h3><i class="fas fa-rupee-sign"></i> Total Sales</h3>
+                    <p class="fs-4">Rs.5,000</p>
                 </div>
             </div>
             <div class="col-md-3">
@@ -144,7 +144,7 @@
             </div>
             <div class="col-md-3">
                 <div class="card p-3 text-center">
-                    <h3><i class="fas fa-shopping-cart"></i> Products Sold</h3>
+                    <h3><i class="fas fa-shopping-cart"></i> Cabs Sold</h3>
                     <p class="fs-4">200</p>
                 </div>
             </div>
@@ -158,7 +158,7 @@
 
         <!-- Sales Chart -->
         <div class="charts mt-4">
-            <canvas id="salesChart"></canvas>
+            <canvas id="salesChart" width="1000" height ="500"></canvas>
         </div>
     </div>
 

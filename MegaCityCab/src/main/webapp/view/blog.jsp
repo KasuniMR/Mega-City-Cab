@@ -30,7 +30,7 @@
             color: #4caf50 !important;
         }
         .blog-header {
-            background: linear-gradient(to right, #2e7d32, #1b5e20);
+            background: url('../images/front2.jpg') no-repeat center center/cover;
             padding: 50px 0;
             text-align: center;
             color: white;
@@ -88,21 +88,33 @@
     <div class="row">
         <div class="col-md-6">
             <article class="card mb-4">
-                <img src="<%=request.getContextPath() + "/images/blog1.jpg"%>" class="card-img-top" alt="Blog Post 1">
+                <img src="<%=request.getContextPath() + "/images/bloges.jpg"%>" class="card-img-top" alt="Blog Post 1">
                 <div class="card-body">
                     <h2 class="card-title">How Ridek is Revolutionizing Taxi Booking</h2>
-                    <p class="card-text">Discover how Ridek is transforming the taxi industry with innovation and technology...</p>
-                    <a href="post1.jsp" class="btn btn-success">Read More</a>
+                    <p class="card-text">Quisque pretium fermentum quam, sit amet cursus ante sollicitudin vel. 
+				Morbi consequat risus consequat, porttitor orci sit amet, iaculis nisl. Integer quis sapien nec elit ultrices euismon sit amet id lacus. 
+				Sed a imperdiet erat. Duis eu est dignissim lacus dictum hendrerit quis vitae mi. Fusce eu nulla ac nisi cursus tincidunt. 
+				Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tristique sem eget leo faucibus porttiton.
+
+				Nulla vitae metus tincidunt, varius nunc quis, porta nulla. Pellentesque vel dui nec libero auctor pretium id sed arcu. 
+				Nunc consequat diam id nisl blandit dignissim. Etiam commodo diam dolor, at scelerisque sem finibus sit amet. 
+				Curabitur id lectus eget purus finibus laoreet.</p>
                 </div>
             </article>
         </div>
         <div class="col-md-6">
             <article class="card mb-4">
-                <img src="<%=request.getContextPath() + "/images/blog2.jpg"%>" class="card-img-top" alt="Blog Post 2">
+                <img src="<%=request.getContextPath() + "/images/bloges2.jpg"%>" class="card-img-top" alt="Blog Post 2">
                 <div class="card-body">
                     <h2 class="card-title">Top 5 Features of Ridek Taxi Service</h2>
-                    <p class="card-text">Explore the features that make Ridek a preferred choice for travelers...</p>
-                    <a href="post2.jsp" class="btn btn-success">Read More</a>
+                    <p class="card-text">Quisque pretium fermentum quam, sit amet cursus ante sollicitudin vel. 
+				Morbi consequat risus consequat, porttitor orci sit amet, iaculis nisl. Integer quis sapien nec elit ultrices euismon sit amet id lacus. 
+				Sed a imperdiet erat. Duis eu est dignissim lacus dictum hendrerit quis vitae mi. Fusce eu nulla ac nisi cursus tincidunt. 
+				Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tristique sem eget leo faucibus porttiton.
+
+				Nulla vitae metus tincidunt, varius nunc quis, porta nulla. Pellentesque vel dui nec libero auctor pretium id sed arcu. 
+				Nunc consequat diam id nisl blandit dignissim. Etiam commodo diam dolor, at scelerisque sem finibus sit amet. 
+				Curabitur id lectus eget purus finibus laoreet.</p>
                 </div>
             </article>
         </div>

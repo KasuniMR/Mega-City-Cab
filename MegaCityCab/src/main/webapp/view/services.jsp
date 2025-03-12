@@ -11,7 +11,10 @@
     <style>
 body {
             font-family: 'Poppins', sans-serif;
-            background-color: black;
+	background-color: #121212;
+	color: #e0e0e0;
+	margin: 0;
+	padding: 0;
         }
         .navbar, .footer {
             background-color: #1e1e1e;
@@ -23,7 +26,7 @@ body {
             color: #4caf50 !important;
         }
         .blog-header {
-            background: linear-gradient(to right, #2e7d32, #1b5e20);
+            background: url('../images/front2.jpg') no-repeat center center/cover;
             padding: 50px 0;
             text-align: center;
             color: white;

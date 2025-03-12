@@ -28,7 +28,7 @@
             color: white !important;
         }
         .hero {
-            background: linear-gradient(to right, #2e7d32, #1b5e20);
+            background: url('../images/front2.jpg') no-repeat center center/cover;
             height: 40vh;
             display: flex;
             align-items: center;
@@ -306,7 +306,6 @@
             </div>
             <!-- Right Content -->
             <div class="col-lg-6 about-us-content">
-                <h6 class="section-subtitle">About Us</h6>
                 <h1 class="section-title">Welcome to Carbook</h1>
                 <p class="section-text">
                     A small river named Duden flows by their place and supplies it with the necessary regelialia. 
