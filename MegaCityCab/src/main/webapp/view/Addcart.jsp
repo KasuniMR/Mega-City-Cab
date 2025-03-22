@@ -88,17 +88,28 @@
         .btn-checkout:hover {
             background-color: #0056b3;
         }
-        .btn-back {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
+        .back-button {
             display: inline-block;
-            margin-bottom: 15px;
+            background: #ff9800;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            width: max-content;
+            margin: 20px auto;
+            box-shadow: 0px 5px 15px rgba(255, 152, 0, 0.4);
+            
         }
-        .btn-back:hover {
-            background-color: #0056b3;
+        .back-button:hover {
+            background: #e68900;
+            box-shadow: 0px 8px 20px rgba(255, 152, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        .back-button i {
+            margin-right: 10px;
         }
         .total-price {
             font-size: 22px;
@@ -123,9 +134,10 @@
     <div class="container">
         <h2 class="text-center">🛒 Your Car Booking Cart</h2>
         
-        <div class="text-start mb-3">
-            <a href="booking.jsp" class="btn btn-back">⬅️ Back</a>
-        </div>
+        <!-- Back Button -->
+     <div class="container mt-3">
+        <a href="booking.jsp" class="back-button"><i class="fas fa-arrow-left"></i> Back </a>
+    </div>
         
 
         <% List<String[]> cart = (List<String[]>) session.getAttribute("cart");
@@ -233,9 +245,9 @@
             </div>
             <div class="col-md-3">
                 <h5>Have a Questions?</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
             </div>
         </div>
         <div class="text-center mt-4">

@@ -170,9 +170,9 @@ body {
             </div>
             <div class="col-md-3">
                 <h5>Have a Questions?</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
             </div>
         </div>
         <div class="text-center mt-4">

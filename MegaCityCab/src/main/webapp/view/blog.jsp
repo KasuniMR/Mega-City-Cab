@@ -90,15 +90,10 @@
             <article class="card mb-4">
                 <img src="<%=request.getContextPath() + "/images/bloges.jpg"%>" class="card-img-top" alt="Blog Post 1">
                 <div class="card-body">
-                    <h2 class="card-title">How Ridek is Revolutionizing Taxi Booking</h2>
-                    <p class="card-text">Quisque pretium fermentum quam, sit amet cursus ante sollicitudin vel. 
-				Morbi consequat risus consequat, porttitor orci sit amet, iaculis nisl. Integer quis sapien nec elit ultrices euismon sit amet id lacus. 
-				Sed a imperdiet erat. Duis eu est dignissim lacus dictum hendrerit quis vitae mi. Fusce eu nulla ac nisi cursus tincidunt. 
-				Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tristique sem eget leo faucibus porttiton.
-
-				Nulla vitae metus tincidunt, varius nunc quis, porta nulla. Pellentesque vel dui nec libero auctor pretium id sed arcu. 
-				Nunc consequat diam id nisl blandit dignissim. Etiam commodo diam dolor, at scelerisque sem finibus sit amet. 
-				Curabitur id lectus eget purus finibus laoreet.</p>
+                    <h2 class="card-title">3 Easy Steps To Rent A Car With A Debit Card</h2>
+                    <p class="card-text">Renting a car with a debit card is possible, but it requires a few extra steps compared to using a credit card. 
+                    Many rental companies have specific policies to reduce risk, such as requiring a deposit, proof of return travel, or additional identification. 
+                    By following these three simple steps, you can successfully rent a car with a debit card while avoiding common pitfalls..</p>
                 </div>
             </article>
         </div>
@@ -106,15 +101,10 @@
             <article class="card mb-4">
                 <img src="<%=request.getContextPath() + "/images/bloges2.jpg"%>" class="card-img-top" alt="Blog Post 2">
                 <div class="card-body">
-                    <h2 class="card-title">Top 5 Features of Ridek Taxi Service</h2>
-                    <p class="card-text">Quisque pretium fermentum quam, sit amet cursus ante sollicitudin vel. 
-				Morbi consequat risus consequat, porttitor orci sit amet, iaculis nisl. Integer quis sapien nec elit ultrices euismon sit amet id lacus. 
-				Sed a imperdiet erat. Duis eu est dignissim lacus dictum hendrerit quis vitae mi. Fusce eu nulla ac nisi cursus tincidunt. 
-				Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tristique sem eget leo faucibus porttiton.
-
-				Nulla vitae metus tincidunt, varius nunc quis, porta nulla. Pellentesque vel dui nec libero auctor pretium id sed arcu. 
-				Nunc consequat diam id nisl blandit dignissim. Etiam commodo diam dolor, at scelerisque sem finibus sit amet. 
-				Curabitur id lectus eget purus finibus laoreet.</p>
+                    <h2 class="card-title">The Easiest Car Rental With Several Stages</h2>
+                    <p class="card-text">Renting a car can be a smooth and hassle-free process when broken down into several simple stages. 
+                    From selecting a rental company to returning the vehicle, each step ensures a seamless experience. By understanding the requirements, 
+                    preparing the necessary documents, and following the rental policies, you can easily navigate the process and secure a car that suits your needs.</p>
                 </div>
             </article>
         </div>
@@ -156,9 +146,9 @@
             </div>
             <div class="col-md-3">
                 <h5>Have a Questions?</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
             </div>
         </div>
         <div class="text-center mt-4">

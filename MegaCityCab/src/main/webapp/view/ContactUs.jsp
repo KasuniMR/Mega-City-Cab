@@ -100,9 +100,9 @@
             </div>
             <div class="col-md-6">
                 <h5>Contact Information</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, CA, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
                 <!-- Google Maps -->
                 <div class="ratio ratio-16x9 mt-3">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509366!2d-122.41941538468156!3d37.77492977975921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e2b03f5f7f1%3A0xf99d6b7f9b92712c!2sSan+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1633042670644!5m2!1sen!2sus" allowfullscreen></iframe>
@@ -146,9 +146,9 @@
             </div>
             <div class="col-md-3">
                 <h5>Have a Questions?</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
             </div>
         </div>
         <div class="text-center mt-4">

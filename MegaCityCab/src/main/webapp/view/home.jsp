@@ -306,16 +306,14 @@
             </div>
             <!-- Right Content -->
             <div class="col-lg-6 about-us-content">
-                <h1 class="section-title">Welcome to Carbook</h1>
+                <h1 class="section-title">Welcome to Mega City Cab</h1>
                 <p class="section-text">
-                    A small river named Duden flows by their place and supplies it with the necessary regelialia. 
-                    It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                    Mega City Cab Car Rental Service is a reliable and convenient transportation solution designed to meet the diverse travel needs of customers. 
+                    Whether you're looking for a daily rental, long-term hire, or airport transfer, we offer a wide range of well-maintained vehicles at competitive rates. 
+                    With a user-friendly booking system, professional drivers, and excellent customer support, Mega City Cab ensures a seamless and hassle-free rental experience. 
                 </p>
                 <p class="section-text">
-                    On her way she met a copy. The copy warned the Little Blind Text, that where it came from 
-                    it would have been rewritten a thousand times and everything that was left from its origin 
-                    would be the word "and" and the Little Blind Text should turn around and return to its own, 
-                    safe country.
+                    Our goal is to provide safe, comfortable, and efficient transportation for individuals and businesses alike.
                 </p>
                 <a href="#" class="btn btn-primary about-us-btn">Search Vehicle</a>
             </div>
@@ -323,7 +321,39 @@
     </div>
 </div>
 
-    
+<!-- Help Center Section -->
+    <section class="container my-5" style="background-color: #1e1e1e; color: white; padding: 50px 0; border-radius: 10px;">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">HELP CENTER</h2>
+            <p>Find answers to common questions or reach out to our support team.</p>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="help-box p-4 rounded shadow-lg" style="background: #2e2e2e;">
+                    <i class="fas fa-question-circle fa-3x text-primary mb-3"></i>
+                    <h4>FAQs</h4>
+                    <p>Get quick answers to the most common questions about our services.</p>
+                    <a href="FAQs.jsp" class="btn btn-success">View FAQs</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="help-box p-4 rounded shadow-lg" style="background: #2e2e2e;">
+                    <i class="fas fa-headset fa-3x text-warning mb-3"></i>
+                    <h4>Contact Support</h4>
+                    <p>Need further assistance? Our support team is ready to help you 24/7.</p>
+                    <a href="ContactUs.jsp" class="btn btn-success">Contact Us</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="help-box p-4 rounded shadow-lg" style="background: #2e2e2e;">
+                    <i class="fas fa-comments fa-3x text-info mb-3"></i>
+                    <h4>Live Chat</h4>
+                    <p>Chat with one of our agents in real time for immediate support.</p>
+                    <a href="LiveChat.jsp" class="btn btn-success">Start Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
     
 <!-- Services Start -->
 <div class="container-xxl py-5" style="background-color: #121212;">
@@ -392,8 +422,6 @@
 </div>
 <!-- Services End --> 
 
-<!-- Services End -->
-
     
     <!-- Blog Posts Section -->
 <main class="container my-5">
@@ -403,8 +431,8 @@
                 <img src="<%=request.getContextPath() + "/images/blog3.jpg"%>" class="card-img-top" alt="Blog Post 1">
                 <div class="card-body">
                     <h2 class="card-title">3 Easy Steps To Rent A Car With A Debit Card</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consec adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi...</p>
+                    <p class="card-text">Renting a car with a debit card is possible, but it requires a few extra steps compared to using a credit card.
+                     Many rental companies have specific policies to reduce risk...</p>
                     <a href="blog.jsp" class="btn btn-success">Read More</a>
                 </div>
             </article>
@@ -414,8 +442,8 @@
                 <img src="<%=request.getContextPath() + "/images/blog4.jpg"%>" class="card-img-top" alt="Blog Post 2">
                 <div class="card-body">
                     <h2 class="card-title">The Easiest Car Rental With Several Stages</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat....</p>
+                    <p class="card-text">Renting a car can be a smooth and hassle-free process when broken down into several simple stages. 
+                    From selecting a rental company to returning the vehicle....</p>
                     <a href="blog.jsp" class="btn btn-success">Read More</a>
                 </div>
             </article>
@@ -484,15 +512,15 @@
 <!-- Customer Reviews Section -->
 <section class="container my-5 text-center">
     <h2 class="fw-bold">WHAT CUSTOMER SAY ABOUT US</h2>
-    <p id="review" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+    
 
     <div class="row mt-4 justify-content-center">
         <!-- Testimonial 1 -->
         <div class="col-md-3">
             <div class="testimonial-box shadow-sm p-4 rounded">
-                <p class="fst-italic">"Volutpat diam ut venenatis. Convallis aenean et tortor at risus. Nec nam aliquam sem et tortor."</p>
+                <p class="fst-italic">"The van was perfect for our needs and was very easy to pick up and drop off."</p>
                 <img src="<%=request.getContextPath() + "/images/cus.jpg"%>" class="testimonial-img mt-3" alt="Customer 1">
-                <h5 class="mt-2">SPIKE WARREN</h5>
+                <h5 class="mt-2">Sahan Dilshan</h5>
                 <p class="">Our Customer</p>
             </div>
         </div>
@@ -500,9 +528,9 @@
         <!-- Testimonial 2 (Highlighted) -->
         <div class="col-md-3">
             <div class="testimonial-box featured p-4 rounded">
-                <p class="fst-italic">"Volutpat diam ut venenatis. Convallis aenean et tortor at risus. Nec nam aliquam sem et tortor."</p>
+                <p class="fst-italic">"Everything was handled wonderfully with great customer service. First-rate service."</p>
                 <img src="<%=request.getContextPath() + "/images/cus1.jpg"%>" class="testimonial-img mt-3" alt="Customer 2">
-                <h5 class="mt-2">BENTLEY BURTON</h5>
+                <h5 class="mt-2">Pavan Lakshan</h5>
                 <p class="">Our Customer</p>
             </div>
         </div>
@@ -510,9 +538,9 @@
         <!-- Testimonial 3 -->
         <div class="col-md-3">
             <div class="testimonial-box shadow-sm p-4 rounded">
-                <p class="fst-italic">"Volutpat diam ut venenatis. Convallis aenean et tortor at risus. Nec nam aliquam sem et tortor."</p>
+                <p class="fst-italic">"Good rental, would rent again."</p>
                 <img src="<%=request.getContextPath() + "/images/cus2.jpg"%>" class="testimonial-img mt-3" alt="Customer 3">
-                <h5 class="mt-2">MALLORY RODRIQUEZ</h5>
+                <h5 class="mt-2">shani Thennakoon</h5>
                 <p class="">Our Customer</p>
             </div>
         </div>
@@ -556,9 +584,9 @@
             </div>
             <div class="col-md-3">
                 <h5>Have a Questions?</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
             </div>
         </div>
         <div class="text-center mt-4">

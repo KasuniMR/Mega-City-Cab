@@ -7,6 +7,7 @@ public class Register {
     private String uname;
     private String password;
     private String profileImage;
+    private String adminReply; // New field for admin reply
 
     // Default Constructor
     public Register() {}
@@ -19,6 +20,7 @@ public class Register {
         this.uname = uname;
         this.password = password;
         this.profileImage = "images/default.png"; // Default profile image
+        this.adminReply = ""; // Default empty admin reply
     }
 
     // Constructor with profile image (for profile updates)
@@ -29,58 +31,74 @@ public class Register {
         this.uname = uname;
         this.password = password;
         this.profileImage = profileImage;
+        this.adminReply = ""; // Default empty admin reply
     }
 
-	public String getName() {
-		return name;
-	}
+    // Constructor with admin reply (for fetching user data)
+    public Register(String name, String address, String contact, String uname, String password, String profileImage, String adminReply) {
+        this.name = name;
+        this.address = address;
+        this.contact = contact;
+        this.uname = uname;
+        this.password = password;
+        this.profileImage = profileImage;
+        this.adminReply = adminReply;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public String getContact() {
-		return contact;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
+    public String getContact() {
+        return contact;
+    }
 
-	public String getUname() {
-		return uname;
-	}
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
 
-	public void setUname(String uname) {
-		this.uname = uname;
-	}
+    public String getUname() {
+        return uname;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getProfileImage() {
-		return profileImage;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setProfileImage(String profileImage) {
-		this.profileImage = profileImage;
-	}
+    public String getProfileImage() {
+        return profileImage;
+    }
 
-	
-	
-	
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
 
+    public String getAdminReply() {
+        return adminReply;
+    }
+
+    public void setAdminReply(String adminReply) {
+        this.adminReply = adminReply;
+    }
 }

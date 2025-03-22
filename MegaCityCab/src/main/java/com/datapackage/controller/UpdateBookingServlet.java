@@ -27,6 +27,6 @@ public class UpdateBookingServlet extends HttpServlet {
             bookingDao.updateBookingStatus(bookingId, "Cancelled");
         }
 
-        response.sendRedirect("Admin/ManageBookings.jsp");
+        response.sendRedirect("Admin/manageBooking.jsp");
     }
 }

@@ -78,7 +78,7 @@ body {
                             Cookie[] cookies = request.getCookies();
                             if (cookies != null) {
                                 for (Cookie cookie : cookies) {
-                                    if ("username".equals(cookie.getName())) {
+                                    if ("uname".equals(cookie.getName())) {
                                         savedUsername = cookie.getValue();
                                     }
                                 }

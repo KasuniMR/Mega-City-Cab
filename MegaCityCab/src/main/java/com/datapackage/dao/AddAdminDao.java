@@ -29,23 +29,28 @@ public class AddAdminDao {
         return success;
     }
 
-    // Validate Admin Login
-    public boolean validateAdmin(String username, String password) {
-        boolean isValid = false;
-        String sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
-
+    // Validate Admin Login with detailed responses
+    public int validateAdminWithDetails(String username, String password) {
+        String sql = "SELECT username, password FROM admin WHERE username = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
             stmt.setString(1, username);
-            stmt.setString(2, password);
             try (ResultSet rs = stmt.executeQuery()) {
-                isValid = rs.next();
+                if (rs.next()) {
+                    String storedPassword = rs.getString("password");
+                    if (storedPassword.equals(password)) {
+                        return 1; // Correct username and password
+                    } else {
+                        return 2; // Correct username, wrong password
+                    }
+                } else {
+                    return 3; // Wrong username
+                }
             }
         } catch (SQLException e) {
             System.err.println("Error validating admin: " + e.getMessage());
         }
-        return isValid;
+        return 4; // Both incorrect
     }
 
     // Fetch All Admins
@@ -71,7 +76,6 @@ public class AddAdminDao {
         return adminList;
     }
 
-    
     public boolean deleteAdmin(int adminId) {
         boolean deleted = false;
         String sql = "DELETE FROM admin WHERE id = ?";
@@ -87,7 +91,6 @@ public class AddAdminDao {
         return deleted;
     }
 
-    
     public AddAdmin getAdminById(int adminId) {
         AddAdmin admin = null;
         String sql = "SELECT * FROM admin WHERE id = ?";
@@ -145,7 +148,4 @@ public class AddAdminDao {
         
         return rowUpdated;
     }
-
-
-
 }

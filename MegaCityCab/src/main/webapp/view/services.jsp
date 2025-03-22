@@ -156,23 +156,21 @@ color:white;
             <!-- Right Section (Text Content) -->
             <div class="col-md-4">
                 <h2 class="service-title">THE BEST CAR RENTAL SERVICE IN THE WORLD</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Discover the ease and comfort of renting a car with us. Whether you're exploring a new city, heading on a road trip, or need a reliable ride for business, 
+                we ensure a smooth, stress-free experience from start to finish.</p>
 
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="checklist">
-                            <li><i class="fas fa-check-circle"></i> Morbi tristique senectus</li>
-                            <li><i class="fas fa-check-circle"></i> A scelerisque purus</li>
-                            <li><i class="fas fa-check-circle"></i> Dictumst vestibulum</li>
-                            <li><i class="fas fa-check-circle"></i> Dio aenean sed adipiscing</li>
+                            <li><i class="fas fa-check-circle"></i> Seamless Booking – Reserve your car in minutes with our easy-to-use platform.</li>
+                            <li><i class="fas fa-check-circle"></i> Top-Quality Vehicles – Choose from a fleet of well-maintained cars, from economy to luxury.</li>
+                            <li><i class="fas fa-check-circle"></i>  Transparent Pricing – No hidden fees, just affordable rates.</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="checklist">
-                            <li><i class="fas fa-check-circle"></i> Morbi tristique senectus</li>
-                            <li><i class="fas fa-check-circle"></i> A scelerisque purus</li>
-                            <li><i class="fas fa-check-circle"></i> Dictumst vestibulum</li>
-                            <li><i class="fas fa-check-circle"></i> Dio aenean sed adipiscing</li>
+                            <li><i class="fas fa-check-circle"></i> Exceptional Support – 24/7 customer assistance to help with your journey.</li>
+                            <li><i class="fas fa-check-circle"></i>Convenient Pickup & Drop-Off – Multiple locations for your convenience.</li>
                         </ul>
                     </div>
                 </div>
@@ -180,10 +178,10 @@ color:white;
                 <a href="about.jsp" class="about-btn">MORE ABOUT US →</a>
 
                 <div class="founder">
-                    <img src="<%=request.getContextPath() + "/images/cus1.jpg"%>" alt="Founder">
+                    <img src="<%=request.getContextPath() + "/images/Kasuni.png"%>" alt="Founder">
                     <div>
-                        <h5>WILLIAM BURGESS</h5>
-                        <p class="m-0">Carveo Founder</p>
+                        <h5>Kasuni Rajapaksha</h5>
+                        <p class="m-0">Mega City Cab Founder</p>
                     </div>
                 </div>
             </div>
@@ -226,9 +224,9 @@ color:white;
             </div>
             <div class="col-md-3">
                 <h5>Have a Questions?</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
             </div>
         </div>
         <div class="text-center mt-4">

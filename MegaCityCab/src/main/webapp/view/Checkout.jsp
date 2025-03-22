@@ -54,6 +54,7 @@
             width: 100%;
             padding: 12px;
             margin-top: 8px;
+            margin-bottom:20px;
             border: 1px solid #555;
             border-radius: 5px;
             font-size: 16px;
@@ -74,17 +75,28 @@
         .btn-checkout:hover {
             background: #388e3c;
         }
-        .btn-back {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
+        .back-button {
             display: inline-block;
-            margin-bottom: 15px;
+            background: #ff9800;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            width: max-content;
+            margin: 20px auto;
+            box-shadow: 0px 5px 15px rgba(255, 152, 0, 0.4);
+            
         }
-        .btn-back:hover {
-            background-color: #0056b3;
+        .back-button:hover {
+            background: #e68900;
+            box-shadow: 0px 8px 20px rgba(255, 152, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        .back-button i {
+            margin-right: 10px;
         }
         .loading-overlay {
             display: none;
@@ -127,9 +139,10 @@
 <header>
     <h1 class="text-center">💳 Checkout & Confirm Booking</h1>
 </header>
-<div class="text-start mb-3">
-            <a href="Addcart.jsp" class="btn btn-back">⬅️ Back</a>
-        </div>
+<!-- Back Button -->
+     <div class="container mt-3">
+        <a href="Addcart.jsp" class="back-button"><i class="fas fa-arrow-left"></i> Back </a>
+    </div>
 
 <%
     List<String[]> cart = (List<String[]>) session.getAttribute("cart");
@@ -186,10 +199,39 @@
             <input type="date" name="endDate" required>
             
             <label>💳 Select Payment Method:</label>
-            <select name="paymentMethod" required>
-                <option value="Cash">Cash</option>
-                <option value="Card">Credit/Debit Card</option>
-            </select>
+			<select name="paymentMethod" id="paymentMethod" required onchange="toggleCardDetails()">
+			    <option value="Cash">Cash</option>
+			    <option value="Card">Credit/Debit Card</option>
+			</select>
+			
+			<!-- Credit Card Details Section (Initially Hidden) -->
+			<div id="cardDetails" style="display: none; margin-top: 15px;">
+			    <label>💳 Card Number:</label>
+			    <input type="text" name="cardNumber" placeholder="Enter your card number" pattern="\d{6}" maxlength="6">
+			    
+			    <label>📆 Expiry Date:</label>
+			    <input type="month" name="expiryDate" required>
+			    
+			    <label>🔒 CVV:</label>
+			    <input type="password" name="cvv" placeholder="CVV" pattern="\d{3}" maxlength="3">
+			    
+			    <label>📝 Cardholder Name:</label>
+			    <input type="text" name="cardholderName" placeholder="Name on Card" required>
+			</div>
+			
+			<script>
+			function toggleCardDetails() {
+			    var paymentMethod = document.getElementById("paymentMethod").value;
+			    var cardDetails = document.getElementById("cardDetails");
+			    
+			    if (paymentMethod === "Card") {
+			        cardDetails.style.display = "block";
+			    } else {
+			        cardDetails.style.display = "none";
+			    }
+			}
+			</script>
+
             
             <label>📧 Enter Your Email (For Invoice):</label>
             <input type="email" name="email" required placeholder="example@gmail.com">
@@ -236,9 +278,9 @@
             </div>
             <div class="col-md-3">
                 <h5>Have a Questions?</h5>
-                <p><i class="fas fa-map-marker-alt me-2"></i>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Level 3, 61, Janadhipathi Mawatha, 00100, Colombo</p>
                 <p><i class="fas fa-phone me-2"></i>+2 392 3929 210</p>
-                <p><i class="fas fa-envelope me-2"></i>info@yourdomain.com</p>
+                <p><i class="fas fa-envelope me-2"></i>kasunirajapaksha.net@gmail.com</p>
             </div>
         </div>
         <div class="text-center mt-4">

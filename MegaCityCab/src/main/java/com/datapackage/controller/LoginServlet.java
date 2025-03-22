@@ -28,22 +28,15 @@ public class LoginServlet extends HttpServlet {
         String rememberMe = request.getParameter("rememberMe");
 
         if (registerDao.validateUser(uname, password)) {
-            // Create session
+            // Create a session for logged-in users
             HttpSession session = request.getSession();
             session.setAttribute("uname", uname);
 
-            // Handle "Remember Me" using cookies
-            if (rememberMe != null) {
-                Cookie userCookie = new Cookie("savedUsername", uname);
-                userCookie.setMaxAge(7 * 24 * 60 * 60); // 7 days
-                userCookie.setPath("/"); // Ensure it works across pages
-                response.addCookie(userCookie);
-            } else {
-                Cookie userCookie = new Cookie("savedUsername", "");
-                userCookie.setMaxAge(0); // Delete the cookie
-                userCookie.setPath("/");
-                response.addCookie(userCookie);
-            }
+            // Handle "Remember Me" functionality with cookies
+            Cookie userCookie = new Cookie("uname", rememberMe != null ? uname : "");
+            userCookie.setMaxAge(rememberMe != null ? 7 * 24 * 60 * 60 : 0); // Set for 7 days or delete
+            userCookie.setPath("/"); // Make cookie accessible across the application
+            response.addCookie(userCookie);
 
             response.sendRedirect("view/home.jsp");
         } else {

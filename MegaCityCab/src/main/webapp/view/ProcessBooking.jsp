@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List, java.sql.Date, java.io.FileOutputStream, java.io.IOException, java.io.File, java.net.URLEncoder" %>
+<%@ page import="jakarta.mail.*, jakarta.mail.internet.*, java.util.Properties" %>
 <%@ page import="com.itextpdf.text.*, com.itextpdf.text.pdf.PdfWriter, com.itextpdf.text.pdf.PdfPTable, com.itextpdf.text.pdf.PdfPCell" %>
 <%@ page import="com.datapackage.dao.BookingDao, com.datapackage.model.Booking" %>
 <%@ page session="true" %>
@@ -73,6 +74,38 @@
             document.add(new Paragraph("===================================="));
             document.close();
             session.removeAttribute("cart");
+
+            // Send payment success email
+            String host = "smtp.gmail.com"; 
+            String senderEmail = "kasunirajapaksha.net@gmail.com";  // Replace with your email
+            String senderPassword = "ocuh jfzc wmqq squc"; // Replace with your email password
+
+            Properties props = new Properties();
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.host", host);
+            props.put("mail.smtp.port", "587");
+
+            Session mailSession = Session.getInstance(props, new jakarta.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(senderEmail, senderPassword);
+                }
+            });
+
+            try {
+                Message message = new MimeMessage(mailSession);
+                message.setFrom(new InternetAddress(senderEmail));
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(userEmail));
+                message.setSubject("Car Rental Payment Confirmation");
+                message.setText("Dear Customer,\n\nYour payment of Rs. " + totalPrice + " for the car rental has been successfully received.\n" +
+                                "Booking Dates: " + startDateStr + " to " + endDateStr + "\n" +
+                                "From: " + fromLocation + "\nTo: " + toLocation + "\n\n" +
+                                "Thank you for choosing our service!\n\nBest Regards,\nMega City Cab Team");
+
+                Transport.send(message);
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
 
             response.sendRedirect("DownloadBill.jsp?file=" + URLEncoder.encode(fileName, "UTF-8"));
         } catch (Exception e) {

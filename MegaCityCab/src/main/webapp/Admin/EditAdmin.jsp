@@ -94,7 +94,7 @@ body {
 		class="container d-flex justify-content-center align-items-center min-vh-100">
 		<div class="col-md-6">
 			<div class="card">
-				<a href="manageDrivers.jsp" class="back-btn">⬅ Back to Admin
+				<a href="AddAdmin.jsp" class="back-btn">⬅ Back to Admin
 					List</a>
 
 				<h2 class="text-center">✏ Edit Admin</h2>
