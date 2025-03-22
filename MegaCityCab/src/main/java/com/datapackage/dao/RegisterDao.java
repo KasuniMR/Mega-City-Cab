@@ -5,9 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import com.datapackage.model.Register;
-
 
 public class RegisterDao {
     private static final String URL = "jdbc:mysql://localhost:3306/mega_city_cab";
@@ -16,7 +14,7 @@ public class RegisterDao {
 
     // Register a new user
     public boolean registerUser(Register user) {
-        String query = "INSERT INTO login(FullName, Address, Contact, userName, Password) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO login (FullName, Address, Contact, userName, Password) VALUES (?, ?, ?, ?, ?)";
         
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -49,7 +47,7 @@ public class RegisterDao {
         }
         return false;
     }
-    
+
     // Validate user login
     public boolean validateUser(String uname, String password) {
         String query = "SELECT 1 FROM login WHERE userName = ? AND Password = ?";
@@ -67,9 +65,9 @@ public class RegisterDao {
         return false;
     }
 
-    // Fetch user details by username, including admin's reply
+    // Fetch user details by username, including message and admin reply
     public Register getUserByUsername(String uname) {
-        String query = "SELECT * FROM login WHERE UserName = ?";
+        String query = "SELECT FullName, Address, Contact, UserName, Password, profile_pic FROM login WHERE UserName = ?";
         
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -87,8 +85,8 @@ public class RegisterDao {
                     rs.getString("profile_pic")
                 );
                 
-                // Fetch admin reply
-                user.setAdminReply(getAdminReply(rs.getString("FullName"), conn));
+                // Fetch user message and admin reply
+                fetchMessageAndReply(user, conn);
                 
                 return user;
             }
@@ -98,20 +96,24 @@ public class RegisterDao {
         return null;
     }
 
-    // Fetch the latest admin reply for a user
-    private String getAdminReply(String fullName, Connection conn) {
-        String query = "SELECT reply FROM contactus WHERE name = ? ORDER BY submitted_at DESC LIMIT 1";
-        
+    // Fetch the latest user message and admin reply
+    private void fetchMessageAndReply(Register user, Connection conn) {
+        String query = "SELECT message, reply FROM contactus WHERE name = ? ORDER BY submitted_at DESC LIMIT 1";
+
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, fullName);
+            stmt.setString(1, user.getName());  // Use FullName to match the message in the contactus table
             ResultSet rs = stmt.executeQuery();
+
             if (rs.next()) {
-                return rs.getString("reply");
+                user.setMessage(rs.getString("message") != null ? rs.getString("message") : "No message submitted.");
+                user.setAdminReply(rs.getString("reply") != null ? rs.getString("reply") : "No reply from admin yet.");
+            } else {
+                user.setMessage("No message submitted.");
+                user.setAdminReply("No reply from admin yet.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return "No reply from admin yet.";
     }
 
     // Update user details

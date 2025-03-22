@@ -48,77 +48,50 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
-	    }
-	    .sidebar img {
-	        width: 120px;
-	        height: 120px;
-	        border-radius: 50%;
-	        border: 3px solid #4caf50;
-	        margin-bottom: 15px;
-	        transition: transform 0.3s ease;
-	    }
-	    .sidebar img:hover {
-	        transform: scale(1.1);
-	    }
-	    .sidebar h4 {
-	        color: #4caf50;
-	        margin-bottom: 10px;
-	    }
-	    .sidebar p {
-	        color: #ccc;
-	        text-align: center;
-	        font-size: 14px;
-	    }
-	    .sidebar .nav-links {
-	        list-style: none;
-	        padding: 0;
-	        margin-top: 20px;
-	        width: 100%;
-	    }
-	    .sidebar .nav-links li {
-	        width: 100%;
-	        margin: 10px 0;
-	    }
-	    .sidebar .nav-links a {
-	        display: block;
-	        padding: 12px;
-	        background: #252525;
-	        color: #fff;
-	        text-align: center;
-	        text-decoration: none;
-	        border-radius: 5px;
-	        transition: background 0.3s;
-	    }
-	    .sidebar .nav-links a:hover {
-	        background: #4caf50;
-	    }
-	    .admin-reply {
-	        display: none;
-	        color: #4caf50;
-	        text-align: center;
-	        margin-top: 10px;
-	        transform: translateY(-20px);
-	        opacity: 0;
-	        transition: all 0.5s ease;
-	    }
-	    .admin-reply.show {
-	        display: block;
-	        transform: translateY(0);
-	        opacity: 1;
-	    }
-	    .admin-reply-btn {
-	        background: #4caf50;
-	        border: none;
-	        color: white;
-	        padding: 10px;
-	        border-radius: 5px;
-	        cursor: pointer;
-	        margin-top: 10px;
-	    }
-	    .admin-reply-btn:hover {
-	        background: #3e8e41;
-	    
-	    }
+        }
+        .sidebar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #4caf50;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .sidebar img:hover {
+            transform: scale(1.1);
+        }
+        .sidebar h4 {
+            color: #4caf50;
+            margin-bottom: 10px;
+        }
+        .sidebar p {
+            color: #ccc;
+            text-align: center;
+            font-size: 14px;
+        }
+        .sidebar .nav-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .sidebar .nav-links li {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .sidebar .nav-links a {
+            display: block;
+            padding: 12px;
+            background: #252525;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .sidebar .nav-links a:hover {
+            background: #4caf50;
+        }
         .main-content {
             margin-left: 270px;
             width: 80%;
@@ -148,20 +121,12 @@
     <h3>Welcome</h3>
     <img src="<%= request.getContextPath() + "/" + profilePic %>" alt="Profile Image">
     <h4><%= user.getUname() %></h4>
-    <button class="admin-reply-btn" onclick="showAdminReply()">Show Admin Reply</button>
-    <p id="adminReply" class="admin-reply"><%= (user.getAdminReply() != null && !user.getAdminReply().isEmpty()) ? user.getAdminReply() : "No reply from admin yet." %></p>
     <ul class="nav-links">
         <li><a href="home.jsp">Home</a></li>
+        <li><a href="adminReply.jsp">Admin Reply</a></li>
         <li><a href="logout.jsp">Logout</a></li>
     </ul>
 </div>
-
-<script>
-    function showAdminReply() {
-        let reply = document.getElementById('adminReply');
-        reply.classList.add('show');
-    }
-</script>
 
         <div class="main-content">
             <div class="card shadow p-4">

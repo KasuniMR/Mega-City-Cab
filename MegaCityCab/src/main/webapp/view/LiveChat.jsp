@@ -11,10 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        body {
-            background-color: #121212;
-            color: white;
-        }
+        body { background-color: #121212; color: white; }
         .chat-container {
             max-width: 600px;
             margin: 50px auto;
@@ -33,65 +30,23 @@
             display: flex;
             flex-direction: column;
         }
-        .chat-input {
-            display: flex;
-            margin-top: 15px;
-            gap: 10px;
-        }
+        .chat-input { display: flex; margin-top: 15px; gap: 10px; }
         .chat-input input {
-            flex: 1;
-            padding: 12px;
-            border-radius: 25px;
-            border: none;
-            background: #333;
-            color: white;
-            outline: none;
+            flex: 1; padding: 12px; border-radius: 25px; border: none; background: #333; color: white; outline: none;
         }
         .chat-input button {
-            background: #4caf50;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
+            background: #4caf50; border: none; padding: 12px 20px; border-radius: 25px; color: white; font-weight: bold; cursor: pointer;
         }
-        .chat-input button:hover {
-            background: #388e3c;
+        .chat-input button:hover { background: #388e3c; }
+        .message { padding: 10px 15px; border-radius: 20px; margin: 5px 0; max-width: 75%; font-size: 14px; }
+        .user-message { background: #4caf50; align-self: flex-end; color: white; text-align: right; border-bottom-right-radius: 0; }
+        .bot-message { background: #555; align-self: flex-start; color: white; border-bottom-left-radius: 0; }
+        .chat-suggestions { text-align: center; margin-bottom: 10px; }
+        .suggestion-btn {
+            background: #444; border: none; padding: 8px 12px; border-radius: 15px; color: white; font-size: 12px; cursor: pointer; margin: 3px;
         }
-        .message {
-            padding: 10px 15px;
-            border-radius: 20px;
-            margin: 5px 0;
-            max-width: 75%;
-            display: inline-block;
-            font-size: 14px;
-        }
-        .user-message {
-            background: #4caf50;
-            align-self: flex-end;
-            color: white;
-            text-align: right;
-            border-bottom-right-radius: 0;
-        }
-        .bot-message {
-            background: #555;
-            align-self: flex-start;
-            color: white;
-            border-bottom-left-radius: 0;
-        }
-        .typing-indicator {
-            background: #555;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 20px;
-            margin: 5px 0;
-            font-size: 14px;
-            display: inline-block;
-            opacity: 0.7;
-        }
-        .back-button {
+        .suggestion-btn:hover { background: #666; 
+        }.back-button {
             display: inline-block;
             background: #ff9800;
             color: white;
@@ -117,8 +72,8 @@
     </style>
 </head>
 <body>
-    
-    <!-- Navbar -->
+
+<!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="Home.jsp">MEGA CITY<span class="text-success">CAB</span></a>
@@ -126,24 +81,31 @@
     </nav>
     
     <!-- Back Button -->
-     <div class="container mt-3">
+    <div class="container mt-3">
         <a href="home.jsp" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
-
     
-    <!-- Live Chat Container -->
     <div class="chat-container">
         <h3 class="text-center">Live Chat Support</h3>
+        
+        <!-- Quick Suggestions -->
+        <div class="chat-suggestions" id="chatSuggestions">
+            <p>Quick Suggestions:</p>
+            <button class="suggestion-btn" onclick="setSuggestion('how do i book a car')">How do I book a car?</button>
+            <button class="suggestion-btn" onclick="setSuggestion('what are the payment options')">What are the payment options?</button>
+            <button class="suggestion-btn" onclick="setSuggestion('can i cancel my booking')">Can I cancel my booking?</button>
+            <button class="suggestion-btn" onclick="setSuggestion('is there an age restriction')">Is there an age restriction?</button>
+        </div>
+        
         <div class="chat-box" id="chatBox">
             <div class="bot-message message">Welcome to Mega City Cab! How can I assist you today?</div>
         </div>
         <div class="chat-input">
-            <input type="text" id="chatInput" placeholder="Type a message...">
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
     
-   <!-- Live Chat Script -->
     <script>
         const faqResponses = {
             "how do i book a car": "You can book a car through our <a href='booking.jsp' class='text-success'>Booking Page</a>.",
@@ -179,6 +141,10 @@
             if (event.key === "Enter") {
                 sendMessage();
             }
+        }
+        
+        function setSuggestion(message) {
+            document.getElementById("chatInput").value = message;
         }
     </script>
     
